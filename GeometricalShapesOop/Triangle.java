@@ -4,36 +4,47 @@ public class Triangle extends Shape {
     private int base;
     private int height;
 
-    public Triangle(int base, int height){
-        setBase(base);
-        setHeight(height);
+    public Triangle() {
     }
 
-    public Triangle(){
-
+    public Triangle(String text, String material, int base, int height) {
+        super(text, material);
+        this.base = base;
+        this.height = height;
     }
 
-    public Triangle(String text, String material){
-        setText(text);
-        setMaterial(material);
+    public Triangle(int base, int height) {
+        this.base = base;
+        this.height = height;
     }
 
-    private int setBase(int base){
-        return  this.base = base;
+    public void displayTriangleHeight() {
+        System.out.println("Height is: " + height);
     }
 
-     private int setHeight(int height){
-         return  this.height = height;
+    @Override
+    public int getSize() {
+        return (base * height) / 2;
     }
 
-    public void displayTriangleHeight(int height){
-        System.out.println("Triangle height is: " + setHeight(height));
+    public int getBase() {
+        return base;
     }
 
-    public void getSize(int base, int height){
-
-        int size = (setBase(base) + setHeight(height)) / 2;
-        System.out.println("Aria is: " + size);
+    public void setBase(int base) {
+        this.base = base;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle: height is " + height + " base is: " + base + " made of" + material + " contains the text" + text;
+    }
 }
